@@ -15,7 +15,8 @@ def alignScore(seq1, seq2):
     dismatch_num = seq1_aln.count("-") + seq2_aln.count("-")
     return (len(seq1_aln) - dismatch_num) * 1.0 / max( len(seq1), len(seq2) )
 
-def
+def alignScoreMatrix(seq1_list, seq2_list):
+    f
 
 if __name__ == "__main__":
     print alignScore("ACG", "CG")
