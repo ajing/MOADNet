@@ -19,8 +19,20 @@ class AllInfo:
     def getMappedLigand(self, pid):
         return self._prodict[pid]
 
+    def getMappedLigandList(self, pid_list):
+        newlist = []
+        for eachpid in pid_list:
+            newlist.append(self.getMappedLigand(eachpid))
+        return list(set(newlist))
+
     def getMappedProtein(self, lid):
         return self._ligdict[lid]
+
+    def getMappeddProteinList(self, lid_list):
+        newlist = []
+        for eachlid in lid_list:
+            newlist.append(self.getMappedProtein(eachlid))
+        return list(set(newlist))
 
     def getProteinInfo(self, pid):
         return self._proinfodict[pid]
