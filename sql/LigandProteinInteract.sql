@@ -1,1 +1,1 @@
-select LigandSuperRelationEJB.ligandId, MoadletEJB.protein as proteinId from LigandSuperRelationEJB left join MoadletEJB on LigandSuperRelationEJB.moadlet = MoadletEJB.id;
+select LigandSuperRelationEJB.ligandId, LigandSuperRelationEJB.chain, LigandSuperRelationEJB.firstnum, MoadletEJB.protein as proteinId from LigandSuperRelationEJB left join MoadletEJB on LigandSuperRelationEJB.moadlet = MoadletEJB.id left join LigandEJB on LigandEJB.id = LigandSuperRelationEJB.ligandId where LigandEJB.openeyeCanonical is not NULL and LigandEJB.openeyeCanonical <> 'NULL';
